@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  quarkus-app:
+    build:
+      context: .
+      dockerfile: src/main/docker/Dockerfile.jvm
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres-db
+    environment:
+      - QUARKUS_DATASOURCE_JDBC_URL=${DB_URI}
+      - QUARKUS_TEST_DATASOURCE_JDBC_URL=${TEST_DB_URI}
+      - QUARKUS_DATASOURCE_USERNAME=${DB_USERNAME}
+      - QUARKUS_DATASOURCE_PASSWORD=${DB_PASSWORD}
+
+  postgres-db:
+    image: postgres:latest
+    build:
+      context: .
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_USERNAME}
+    volumes:
+      - D:/Docs/pg:/var/lib/postgresql/data
+      - ./src/main/resources/import.sql:/docker-entrypoint-initdb.d/init.sql
