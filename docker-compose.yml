@@ -27,5 +27,5 @@ services:
       - POSTGRES_USER=${DB_USERNAME}
       - POSTGRES_PASSWORD=${DB_USERNAME}
     volumes:
-      - D:/Docs/pg:/var/lib/postgresql/data
+      - ${PG_VOLUME_PATH}:/var/lib/postgresql/data
       - ./src/main/resources/import.sql:/docker-entrypoint-initdb.d/init.sql

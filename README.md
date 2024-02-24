@@ -43,6 +43,7 @@ To run the app, you need to have the following environment variables set up:
 * `DB_NAME`: Specifies the name of the database.
 * `DB_USERNAME`: Specifies the username for accessing the database.
 * `DB_PASSWORD`: Specifies the password for accessing the database.
+* `PG_VOLUME_PATH`: Specifies the path on the host machine where PostgreSQL database data will be stored in the container.
 
 Ensure that these environment variables are configured correctly before running the application.
 
