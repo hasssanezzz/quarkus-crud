@@ -4,7 +4,6 @@ This API provides endpoints to perform CRUD (Create, Read, Update, Delete) opera
 
 Additionally, the application is integrated with PostgreSQL using Docker containers. The Docker setup includes two images: one for PostgreSQL and one for the Quarkus application.
 
-
 Comprehensive tests are implemented for each API route to ensure functionality and reliability.
 
 ## Documentation
