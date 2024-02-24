@@ -4,6 +4,7 @@ This API provides endpoints to perform CRUD (Create, Read, Update, Delete) opera
 
 Additionally, the application is integrated with PostgreSQL using Docker containers. The Docker setup includes two images: one for PostgreSQL and one for the Quarkus application.
 
+
 Comprehensive tests are implemented for each API route to ensure functionality and reliability.
 
 ## Documentation
@@ -13,6 +14,8 @@ The API documentation is available in the OpenAPI Specification (formerly Swagge
 [API documentation](./src/main/resources/swagger/api.yaml)
 
 Please refer to the provided OpenAPI Specification file for detailed information about the API endpoints, request/response payloads, and schemas. This API follows the OpenAPI Specification version 3.0.1.
+
+The database table schema is provided in a file named import.sql, located [here](./src/main/resources/import.sql). This file is executed by the PostgreSQL container during initialization to create the necessary tables.
 
 ## Schemas
 
