@@ -1,8 +1,48 @@
-# demo
+# Simple CRUD app with Quarkus
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This API provides endpoints to perform CRUD (Create, Read, Update, Delete) operations on products and their images.
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+Additionally, the application is integrated with PostgreSQL using Docker containers. The Docker setup includes two images: one for PostgreSQL and one for the Quarkus application.
+
+Comprehensive tests are implemented for each API route to ensure functionality and reliability.
+
+## Documentation
+
+The API documentation is available in the OpenAPI Specification (formerly Swagger) format and can be found in the following file:
+
+[API documentation](./src/main/resources/swagger/api.yaml)
+
+Please refer to the provided OpenAPI Specification file for detailed information about the API endpoints, request/response payloads, and schemas. This API follows the OpenAPI Specification version 3.0.1.
+
+## Schemas
+
+### Product
+Data element for product.
+
+* `id` (string, uuid)
+* `name` (string, 2-255 characters)
+* `description` (string, 60-2000 characters)
+* `price` (number, minimum value: 1)
+* `stock` (number, minimum value: 0)
+
+### ProductImg
+Data element for product images.
+
+* `id` (string, uuid)
+* `product_id` (string, uuid)
+* `img` (string, Image URL)
+
+## Environment variables
+
+To run the app, you need to have the following environment variables set up:
+
+* `DB_URI`: Specifies the URI for the main database.
+* `TEST_DB_URI`: Specifies the URI for the test database.
+* `DB_NAME`: Specifies the name of the database.
+* `DB_USERNAME`: Specifies the username for accessing the database.
+* `DB_PASSWORD`: Specifies the password for accessing the database.
+
+Ensure that these environment variables are configured correctly before running the application.
 
 ## Running the application in dev mode
 
@@ -53,10 +93,4 @@ You can then execute your native executable with: `./target/demo-1.0-SNAPSHOT-ru
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
 
-## Provided Code
 
-### RESTEasy Reactive
-
-Easily start your Reactive RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)

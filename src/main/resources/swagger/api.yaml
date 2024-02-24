@@ -1,0 +1,126 @@
+openapi: '3.0.1'
+
+info:
+  title: CRUD api
+  version: "1"
+  description: A simple CRUD API
+
+servers:
+  - url: http://localhost:8080/api
+    description: Local serer
+
+paths:
+  /products:
+    get:
+      summary: Get all products
+      operationId: getAllProducts
+      responses:
+        200:
+          description: returns all retrieved products
+    post:
+      summary: Create a new product
+      operationId: createProduct
+      requestBody:
+        $ref: '#/components/schemas/Product'
+      responses:
+        201:
+          $ref: '#/components/schemas/Product'
+        400:
+          description: Returns error messages for invalid values
+  /products/{id}:
+    get:
+      summary: Get a specific product by ID
+      operationId: getProductById
+      responses:
+        200:
+          $ref: '#/components/schemas/Product'
+        404:
+          description: No product with the provided ID was found
+    put:
+      summary: Update a product by id
+      operationId: updateProductById
+      requestBody:
+        $ref: '#/components/schemas/Product'
+      responses:
+        200:
+          $ref: '#/components/schemas/Product'
+        400:
+          description: Returns error messages for invalid values
+        404:
+          description: No product with the provided ID was found
+    delete:
+      summary: Delete a product by id
+      operationId: deleteProductById
+      responses:
+        204:
+          description: Product is deleted
+        400:
+          description: Invalid Id is provided
+        404:
+          description: No product with the provided ID was found
+  /product-imgs/{product_id}:
+    get:
+      summary: Get all images of a product
+      operationId: getProductImages
+      responses: 
+        200:
+          description: An array of all product images
+        400:
+          description: No product with the provided ID was found
+    post:
+      summary: Add an image to an existing product
+      operationId: createProductImage
+      requestBody:
+        description: Image URL `img`
+      responses:
+        201:
+          description: Product image is created
+        400:
+          description: No product with the provided ID was found
+    delete:
+      summary: Delete product image
+      operationId: deleteProductImage
+      responses:
+        204:
+          description: Product image deleted successfully
+        400:
+          description: No product with the provided ID was found
+
+components:
+  schemas:
+    Product:
+      type: object
+      description: Data element for product
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+          minLength: 2
+          maxLength: 255
+        description:
+          type: string
+          minLength: 60
+          maxLength: 2000
+        price:
+          type: number
+          minimum: 1
+        stock:
+          type: number
+          minimum: 0
+        images:
+          $ref: '#/components/schemas/Product'
+    ProductImg:
+      type: object
+      description: Data element for product images
+      properties:
+        id:
+          type: string
+          format: uuid
+        product_id:
+          type: string
+          format: uuid
+        img:
+          type: string
+          description: Image URL
