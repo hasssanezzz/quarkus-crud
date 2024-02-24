@@ -4,6 +4,8 @@ This API provides endpoints to perform CRUD (Create, Read, Update, Delete) opera
 
 Additionally, the application is integrated with PostgreSQL using Docker containers. The Docker setup includes two images: one for PostgreSQL and one for the Quarkus application.
 
+The database table schema is provided in a file named import.sql, located [here](./src/main/resources/import.sql). This file is executed by the PostgreSQL container during initialization to create the necessary tables.
+
 Comprehensive tests are implemented for each API route to ensure functionality and reliability.
 
 ## Documentation
