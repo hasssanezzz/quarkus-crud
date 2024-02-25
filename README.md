@@ -8,9 +8,7 @@ Comprehensive tests are implemented for each API route to ensure functionality a
 
 ## Documentation
 
-The API documentation is available in the OpenAPI Specification (formerly Swagger) format and can be found in the following file:
-
-[API documentation](./src/main/resources/swagger/api.yaml)
+The API documentation is available in the OpenAPI Specification (formerly Swagger) format and can be found by visiting the following URL after running the app: `<server_url>/q/swagger-ui`
 
 Please refer to the provided OpenAPI Specification file for detailed information about the API endpoints, request/response payloads, and schemas. This API follows the OpenAPI Specification version 3.0.1.
 
