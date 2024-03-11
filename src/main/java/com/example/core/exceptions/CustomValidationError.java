@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.example.core.exceptions;
 
 public class CustomValidationError {
     public String path;

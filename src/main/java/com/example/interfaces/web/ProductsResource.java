@@ -1,7 +1,7 @@
-package com.example.resources;
+package com.example.interfaces.web;
 
-import com.example.entities.Product;
-import com.example.utils.ErrorResponse;
+import com.example.core.entities.Product;
+import com.example.core.exceptions.ErrorResponse;
 import io.quarkus.panache.common.Sort;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;

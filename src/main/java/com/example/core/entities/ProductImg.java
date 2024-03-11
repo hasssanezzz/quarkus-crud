@@ -1,4 +1,4 @@
-package com.example.entities;
+package com.example.core.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;

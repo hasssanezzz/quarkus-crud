@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.example.core.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;

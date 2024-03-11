@@ -1,8 +1,8 @@
 package com.example;
 
-import com.example.entities.Product;
-import com.example.entities.ProductImg;
-import com.example.resources.ProductsImgResource;
+import com.example.core.entities.Product;
+import com.example.core.entities.ProductImg;
+import com.example.interfaces.web.ProductsImgResource;
 import io.quarkus.test.common.http.TestHTTPEndpoint;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
